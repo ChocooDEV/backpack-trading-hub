@@ -1,10 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Backpack Hub
 
-## Getting Started
+Backpack Hub is a dashboard application for Backpack Exchange trading, built with Next.js. It provides a comprehensive interface for monitoring your Backpack Exchange account, including wallet balances, funding rates, market overview, open positions, and a delta-neutral trading strategy implementation.
 
-First, run the development server:
+## Features
 
-```bash
+- **Wallet Information**: View all your balances including available, locked, and lent assets
+- **Funding Rates**: Monitor the top funding rates across all perpetual markets
+- **Open Positions**: View and manage your current trading positions with PnL tracking
+- **Delta-Neutral Strategy**: Implement a delta-neutral trading strategy to earn funding rates while minimizing directional risk
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Language**: TypeScript
+- **API Client**: bpx-api-client for Backpack Exchange API integration
+- **HTTP Client**: Axios
+
+## Getting Ready
+
+First, set up your environment variables:
+
+1. Create a `.env.local` file in the root directory
+2. Add your Backpack Exchange API credentials:
+```
+NEXT_PUBLIC_BPX_API_KEY=your_api_key
+NEXT_PUBLIC_BPX_API_SECRET=your_api_secret
+```
+
+Then, run the development server:
+```
 npm run dev
 # or
 yarn dev
@@ -14,23 +38,64 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API Routes
+
+The application includes several API routes that interact with the Backpack Exchange API:
+
+- `/api/wallet` - Fetches wallet balances
+- `/api/funding-rates` - Gets current funding rates for all perpetual markets
+- `/api/markets` - Retrieves market data including prices and 24h changes
+- `/api/positions` - Gets open positions with PnL information
+- `/api/delta-neutral` - Implements the delta-neutral strategy
+
+
+## Delta-Neutral Strategy
+
+The delta-neutral strategy component allows you to:
+
+1. Select a trading pair with positive funding rates
+2. Enter an investment amount
+3. Automatically open balanced spot and perpetual positions
+4. Earn funding rates while minimizing directional price exposure
+
+## Disclaimer
+
+**USE AT YOUR OWN RISK**: The author(s) of this application do not accept any responsibility or liability for any financial losses that may occur while using this application, including but not limited to:
+
+- Losses resulting from the delta-neutral strategy implementation
+- Errors or bugs in the code
+- Market volatility or unexpected exchange behavior
+- API failures or connectivity issues
+
+Trading cryptocurrencies involves significant risk. Users are solely responsible for:
+- Verifying the correctness of all trading logic
+- Understanding the risks involved in algorithmic trading
+- Monitoring their positions and account balances
+- Ensuring they have sufficient knowledge before using any trading features
+
+By using this application, you acknowledge that you are using it at your own risk and that the author(s) cannot be held responsible for any financial losses.
+
+
+## Security Considerations
+
+- This application requires API keys with trading permissions
+- Never share your API keys or commit them to version control
+- Consider using read-only API keys if you only need to view data without trading
+
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Backpack Exchange API Documentation](https://docs.backpack.exchange) - learn about the Backpack Exchange API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License.
