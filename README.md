@@ -89,6 +89,7 @@ By using this application, you acknowledge that you are using it at your own ris
 ## Learn More
 
 - [Backpack Exchange API Documentation](https://docs.backpack.exchange) - learn about the Backpack Exchange API
+- [Backpack API Client](https://github.com/0xprobe/bpx-api-client) - learn about the Backpack API Client
 
 
 ## Contributing
