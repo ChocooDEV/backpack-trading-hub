@@ -23,8 +23,8 @@ First, set up your environment variables:
 1. Create a `.env.local` file in the root directory
 2. Add your Backpack Exchange API credentials: [Backpack API Keys Manager](https://backpack.exchange/portfolio/settings/api-keys)
 ```
-NEXT_PUBLIC_BPX_API_KEY=your_api_key
-NEXT_PUBLIC_BPX_API_SECRET=your_api_secret
+BPX_API_KEY=your_api_key
+BPX_API_SECRET=your_api_secret
 ```
 
 Then, run the development server:
