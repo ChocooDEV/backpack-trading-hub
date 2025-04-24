@@ -2,6 +2,13 @@
 
 Backpack Hub is a dashboard application for Backpack Exchange trading, built with Next.js. It provides a comprehensive interface for monitoring your Backpack Exchange account, including wallet balances, funding rates, market overview, open positions, and a delta-neutral trading strategy implementation.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ff7235a7-39e3-4afa-8f50-5c305f574181" width="400"/>
+</p>
+
+
+[Join Backpack Exchange](https://backpack.exchange/signup?referral=chocoo)
+
 ## Features
 
 - **Wallet Information**: View all your balances including available, locked, and lent assets
